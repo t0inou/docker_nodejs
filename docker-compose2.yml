@@ -1,0 +1,15 @@
+version: '3'
+services:
+  jenkins:
+    image: jenkinsci/blueocean
+    container_name: jenkins-workshop
+    ports:
+      - 8081:8080
+      - 50000:50000
+    volumes:
+      - ./jenkins:/var/jenkins_home
+  sonarqube:
+    image: sonarqube
+    container_name: sonarqube-workshop
+    ports:
+      - 9000:9000
