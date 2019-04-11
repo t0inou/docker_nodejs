@@ -1,0 +1,8 @@
+version: '3'
+services:
+  nexus:
+    image: sonatype/nexus
+    container_name: nexus-workshop
+    ports:
+      - 8082:8081
+      
