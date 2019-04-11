@@ -1,0 +1,23 @@
+version: '3'
+services:
+  jenkins:
+    image: jenkins
+    container_name: jenkins-workshop
+    ports:
+      - 8081:8080
+      - 50000:50000
+    volumes:
+      - ./jenkins:/var/jenkins_home
+  sonarqube:
+    image: sonarqube
+    container_name: sonarqube-workshop
+    ports:
+      - 9000:9000
+    environment:
+      - sonar.jdbc.username=sonar
+      - sonar.jdbc.password=sonar
+  nexus:
+    image: sonatype/nexus3
+    container_name: nexus-workshop
+    ports:
+      - 8082:8081
